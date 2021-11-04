@@ -21,7 +21,7 @@ public class SellerControler {
 	@GetMapping
 	public ResponseEntity<List<SellerDTO>> findAllSellers(){
 		
-		List<SellerDTO> seller = service.findAllSeller();
+		List<SellerDTO> seller = service.findAll();
 		
 		return ResponseEntity.ok(seller) ;
 	}

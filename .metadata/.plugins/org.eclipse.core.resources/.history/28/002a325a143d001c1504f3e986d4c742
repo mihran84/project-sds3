@@ -1,0 +1,26 @@
+package com.devsuperior.desvendas.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.devsuperior.desvendas.dto.SaleDTO;
+import com.devsuperior.desvendas.entites.Sale;
+import com.devsuperior.desvendas.repositoies.SaleRepository;
+
+
+@Service
+public class SaleService {
+
+	@Autowired
+	private SaleRepository repository;
+
+	public Page<SaleDTO> findAll(Pageable pageable) {
+		Page<Sale> sales =  repository.findAll(pageable);
+
+		return sales.map(x -> new SaleDTO(x));
+
+	}
+
+}

@@ -23,7 +23,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		
 		if (Arrays.asList(env.getActiveProfiles()).contains("test")) {
+			System.out.print("ooooooooooooooooooooooooo");
 			http.headers().frameOptions().disable();
 		}
 		

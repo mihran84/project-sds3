@@ -1,0 +1,25 @@
+package com.devsuperior.desvendas.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.devsuperior.desvendas.entites.Seller;
+import com.devsuperior.desvendas.repositoies.SellerRepository;
+
+@Service
+public class SellerService {
+
+	@Autowired
+	private SellerRepository repository ;
+	
+	
+	public List<Seller> findAllSeller(){
+		
+		List<Seller> sellers = repository.findAll();
+		
+		return sellers ;
+		
+	}
+}

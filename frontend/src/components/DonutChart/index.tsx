@@ -18,8 +18,7 @@ useEffect( ()=>{
         const templables = data.map(x=>x.sellerName) ;
         const tempSeries = data.map(x=>x.sum) ;
         setChartData( { series: tempSeries, labels: templables });
-            console.log(response.data);
-       
+           
        })
 },[]);
     
